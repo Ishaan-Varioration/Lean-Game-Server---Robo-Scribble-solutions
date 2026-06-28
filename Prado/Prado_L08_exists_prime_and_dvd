@@ -1,0 +1,6 @@
+Theorem:
+example : ∃ p : ℕ, Prime p ∧ p ∣ 67280421310721 := by
+
+Response:
+apply exists_prime_and_dvd
+tauto
