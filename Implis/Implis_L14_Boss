@@ -1,0 +1,17 @@
+Theorem:
+theorem imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
+
+Response:
+constructor
+intro
+by_cases h : A
+right
+apply a at h
+assumption
+left
+assumption
+intro
+intro h
+obtain ⟨hb⟩ := a
+contradiction
+assumption
