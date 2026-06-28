@@ -1,0 +1,6 @@
+Theorem:
+example {X : Type} (P : X → Prop) : ¬ (∃ x : X, P x) ↔ ∀ x : X, ¬ P x := by
+
+Response:
+push Not
+rfl
