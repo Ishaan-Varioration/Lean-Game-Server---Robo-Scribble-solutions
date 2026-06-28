@@ -1,0 +1,5 @@
+Theorem:
+example (A B C : Prop) : (A ∧ (¬¬C)) ∨ (¬¬B) ∧ C ↔ (A ∧ C) ∨ B ∧ (¬¬C) := by
+
+Response:
+rw[not_not, not_not]
