@@ -1,0 +1,5 @@
+Theorem:
+example (f : ℤ → ℕ) (n : ℤ): f n ≥ 0 := by
+
+Response:
+simp
