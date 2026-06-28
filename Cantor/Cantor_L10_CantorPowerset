@@ -1,0 +1,12 @@
+Theorem:
+example {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
+
+Response:
+push Not
+intro fp
+by_contra hf
+apply cantor_diagonal at hf
+specialize hf (fun A ↦ ¬ A)
+obtain ⟨a, hA⟩ := hf
+unfold fixedPoints IsFixedPt at hA
+simp at hA
