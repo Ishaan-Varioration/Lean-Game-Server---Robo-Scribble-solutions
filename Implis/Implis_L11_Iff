@@ -1,0 +1,7 @@
+Theorem:
+example (A B : Prop) : (A ↔ B) → (A → B) := by
+
+Response:
+intro a
+obtain ⟨mp, mpr⟩ := a
+assumption
