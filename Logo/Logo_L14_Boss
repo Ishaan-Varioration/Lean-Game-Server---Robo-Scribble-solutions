@@ -1,0 +1,16 @@
+Theorem:
+example (A B C : Prop) (h : A ∨ (B ∧ C)) : (A ∨ B) ∧ (A ∨ C) := by
+
+Response: 
+obtain ⟨⟩ := h
+constructor
+left
+assumption
+left
+assumption
+obtain ⟨h₁, h₂⟩ := h
+constructor
+right
+assumption
+right
+assumption
