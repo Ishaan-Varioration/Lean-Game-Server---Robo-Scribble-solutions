@@ -1,0 +1,8 @@
+Theorem:
+example : let f := fun (n : ℤ) ↦ n + 1 Surjective f := by
+
+Response:
+unfold Surjective
+intro b
+use b - 1
+simp [f]
