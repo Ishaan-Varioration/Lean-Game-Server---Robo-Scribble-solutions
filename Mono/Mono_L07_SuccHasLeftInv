@@ -1,0 +1,10 @@
+Theorem:
+example : HasLeftInverse succ := by
+
+Response:
+unfold HasLeftInverse
+let g : ℕ → ℕ := fun (m) ↦ (m - 1)
+use g
+unfold Function.LeftInverse
+simp
+simp [g]
