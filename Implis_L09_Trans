@@ -1,0 +1,11 @@
+Theorem:
+example (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : B ↔ C := by
+
+Response
+trans A
+symm
+assumption
+trans D
+assumption
+symm
+assumption
