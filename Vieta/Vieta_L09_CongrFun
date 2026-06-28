@@ -1,0 +1,8 @@
+Theorem:
+example (f g : ℤ → ℤ) (h : f = g) (x : ℤ) : f x = g x := by
+
+Response:
+apply congr_fun at h
+have hx : ∀ x, f x = g x
+assumption
+apply hx
