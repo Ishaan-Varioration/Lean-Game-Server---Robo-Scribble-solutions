@@ -1,0 +1,11 @@
+Theorem:
+theorem image_preimage_subset {A B : Type} (f : A → B) (T : Set B) : f '' (f ⁻¹' T) ⊆ T := by
+
+Response:
+intro b
+intro hb
+simp at hb
+obtain ⟨x, hx⟩ := hb
+obtain ⟨h₁, h₂⟩ := hx
+rw[← h₂]
+assumption
