@@ -1,0 +1,5 @@
+Theorem:
+example (I : Finset ℕ) : (∑ i ∈ I, 1) = card I := by
+
+Response:
+simp
