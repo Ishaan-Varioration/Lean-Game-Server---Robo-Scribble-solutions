@@ -1,0 +1,15 @@
+Theorem:
+example (a c : ℝ) (h : a ≠ c): ∃ b : ℝ, a < b ∧ b < c ∨ c < b ∧ b < a := by
+
+Response:
+use (a + c) * 0.5
+obtain h | h | h := lt_trichotomy a c
+left
+constructor
+linarith
+linarith
+contradiction
+right
+constructor
+linarith
+linarith
