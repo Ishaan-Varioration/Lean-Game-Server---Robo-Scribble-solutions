@@ -1,0 +1,22 @@
+Theorem:
+example {a b : ℤ} (h : a ≤ b + 1) : insert (b + 1) (Icc a b) = Icc a (b + 1) := by
+
+Response:
+ext x
+simp
+constructor
+intro h₁
+obtain h₁ | h₁ := h₁
+constructor
+omega
+omega
+omega
+intro h₂
+obtain ⟨ h₃, h₄⟩  := h₂
+by_cases h₅: x = b + 1
+left
+assumption
+right
+constructor
+assumption
+omega
