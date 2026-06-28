@@ -1,0 +1,6 @@
+Theorem:
+example (A B : Prop) (hA : A) (h : A → B) : B := by
+
+Reponse:
+revert hA
+assumption
