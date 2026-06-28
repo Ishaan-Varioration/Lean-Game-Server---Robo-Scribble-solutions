@@ -1,0 +1,7 @@
+Theorem:
+example (A B : Prop) (hA : A) (hB : B) : A ∧ B := by
+
+Reponse:
+constructor
+assumption
+assumption
