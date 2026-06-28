@@ -10,3 +10,4 @@ simp [if_pos h]
 ring
 simp [f, g]
 simp [if_neg h]
+ 
