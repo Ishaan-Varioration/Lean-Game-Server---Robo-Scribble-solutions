@@ -1,0 +1,14 @@
+Theorem:
+theorem cantor_diagonal {A Y : Type} (f : A → A → Y) (hf : Surjective f) : ∀ s : Y → Y, Nonempty (fixedPoints s) := by
+
+Response:
+intro s
+let c : A → Y := fun a ↦ s (f a a)
+unfold Surjective at hf
+specialize hf c
+obtain ⟨a, ha⟩ := hf
+simp [c] at ha
+unfold fixedPoints IsFixedPt
+use f a a
+simp
+nth_rw 2 [ha]
