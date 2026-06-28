@@ -1,1 +1,5 @@
+Theorem:
+example (A B C : Prop) : ¬((¬B ∨ ¬ C) ∨ (A → B)) → (¬A ∨ B) ∧ ¬ (B ∧ C) := by
+
+Reponse:
 tauto
