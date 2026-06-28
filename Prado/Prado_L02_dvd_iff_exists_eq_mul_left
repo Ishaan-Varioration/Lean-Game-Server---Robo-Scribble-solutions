@@ -1,0 +1,12 @@
+Theorem:
+example {a b c : ℕ} (h : a ∣ b) (g : a ∣ c) : a ∣ b + c := by
+
+Response:
+rw[dvd_iff_exists_eq_mul_left] at h
+obtain ⟨x, hx⟩ := h
+rw[dvd_iff_exists_eq_mul_left] at g
+obtain ⟨y, hy⟩ := g
+rw[hx, hy]
+rw[dvd_iff_exists_eq_mul_left]
+use x + y
+ring
