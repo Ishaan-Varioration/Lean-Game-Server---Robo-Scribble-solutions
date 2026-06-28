@@ -1,0 +1,36 @@
+Theorem:
+example (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I | Even i} := by
+
+Response:
+trans ∑ i ∈ { i ∈ I | Even i}, 2
+trans ∑ i ∈ { i ∈ I | Even i}, ((-1)^i + 1)
+symm
+apply sum_subset
+intro i hi
+simp at hi
+obtain ⟨hi1, hi2⟩ := hi
+assumption
+intro i
+intro hi
+intro hi1
+simp at hi1
+apply hi1 at hi
+rw[Odd.neg_pow hi]
+ring
+have h₂ : ∀ i, Even i → (-1)^i + 1 = 2
+intro i
+intro he
+rw [Even.neg_pow he]
+ring
+symm
+apply sum_congr
+rfl
+intro i
+intro hi
+simp at hi
+obtain ⟨hi1, hi2⟩ := hi
+apply h₂ at hi2
+symm
+assumption
+simp
+rw[mul_comm]
