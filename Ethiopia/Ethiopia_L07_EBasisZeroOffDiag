@@ -1,0 +1,15 @@
+Theorem:
+theorem Matrix.zero_on_offDiag_ebasis {n : ℕ} 
+{f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ} (h₁ : ∀ A B, f (A * B) = f (B * A)) : ∀ (i j : Fin n ), (i ≠ j) → f (E i j) = 0 := by
+
+Response:
+intro i j hi
+trans f (E i j * E j j)
+simp only [E]
+simp
+rw[h₁]
+rw [E.mul_of_ne]
+simp
+by_contra h₂
+symm at h₂
+contradiction
