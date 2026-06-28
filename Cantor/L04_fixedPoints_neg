@@ -1,0 +1,7 @@
+Theorem:
+example : fixedPoints (fun (x : ℝ) ↦ -x) = {0} := by
+
+Response:
+unfold fixedPoints
+unfold IsFixedPt
+simp
