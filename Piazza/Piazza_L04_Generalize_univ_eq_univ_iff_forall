@@ -1,0 +1,12 @@
+Theorem:
+example : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
+
+Response:
+simp [eq_univ_iff_forall]
+intro
+by_cases h : Even x
+left
+assumption
+right
+rw[not_even_iff_odd] at h
+assumption
