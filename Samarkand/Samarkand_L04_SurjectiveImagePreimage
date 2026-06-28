@@ -1,0 +1,23 @@
+Theorem:
+theorem Surjective.image_preimage {A B : Type} {f : A → B} (hf : Surjective f) (T : Set B) : f '' (f ⁻¹' T) = T := by
+
+Response:
+ext b
+constructor
+intro hb
+simp at hb
+obtain ⟨x, hx⟩ := hb
+obtain ⟨h₁, h₂⟩ := hx
+rw[← h₂]
+assumption
+intro hbt
+simp
+rw [surjective_iff_hasRightInverse] at hf
+obtain ⟨g, hg⟩ := hf
+use g b
+constructor
+apply hg at b
+rw[b]
+assumption
+apply hg at b
+rw[b]
