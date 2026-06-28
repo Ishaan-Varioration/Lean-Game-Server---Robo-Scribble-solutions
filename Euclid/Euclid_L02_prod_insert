@@ -1,0 +1,16 @@
+Theorem:
+example (b : ℕ) (A : Finset ℕ): (∃ a ∈ A, b ∣ a) → b ∣ ∏ a ∈ A, a := by
+
+Response:
+intro h
+choose a ha using h
+obtain ⟨h₁, h₂⟩ := ha
+rw[← insert_erase h₁]
+rw[prod_insert]
+rw[dvd_iff_exists_eq_mul_left] at h₂
+obtain ⟨c⟩ := h₂
+rw[h]
+rw[dvd_iff_exists_eq_mul_left]
+use c * ∏ x ∈ A.erase (c * b), x
+ring
+simp
