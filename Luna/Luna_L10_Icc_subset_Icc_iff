@@ -1,0 +1,33 @@
+Theorem:
+theorem Icc_subset_Icc_iff (a₁ b₁ a₂ b₂ : ℕ) : a₁ ≤ b₁ → (Icc a₁ b₁ ⊆ Icc a₂ b₂ ↔ a₂ ≤ a₁ ∧ b₁ ≤ b₂) := by
+
+Response:
+simp only [subset_iff]
+simp
+intro ha
+have hz : a₁ ≤ b₁
+assumption
+constructor
+intro hb
+have hc : b₁ ≤ b₁
+apply hb at ha
+tauto
+have hd : a₁ ≤ a₁
+tauto
+apply hb at hd
+apply hd at ha
+obtain ⟨he, hf⟩ := ha
+constructor
+assumption
+apply hb at hc
+obtain ⟨hg, hi⟩ := hc
+assumption
+assumption
+intro h₁
+obtain ⟨ h12, h21⟩ := h₁
+intro h₂
+intro h₃
+intro h₄
+constructor
+omega
+omega
