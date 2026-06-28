@@ -1,0 +1,23 @@
+Theorem:
+theorem surjective_iff_hasRightInverse {A B : Type} (f : A → B) : Surjective f ↔ HasRightInverse f := by
+
+Reponse:
+constructor
+unfold Surjective
+intro hs
+choose g hg using hs
+unfold HasRightInverse
+use g
+unfold Function.RightInverse
+unfold Function.LeftInverse
+intro x
+apply hg
+unfold HasRightInverse
+unfold Function.RightInverse
+unfold Function.LeftInverse
+intro hi
+unfold Surjective
+intro b
+obtain ⟨g⟩ := hi
+use (g b)
+apply h
