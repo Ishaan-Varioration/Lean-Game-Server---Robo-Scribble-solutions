@@ -1,0 +1,15 @@
+Theorem:
+theorem Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] ℝ) (h₁ : ∀ A B, f (A * B) = f (B * A)) (h₂ : f 1 = n) : trace = f := by
+
+Response:
+unfold trace
+ext i
+rw [eq_sum_apply_diag_ebasis]
+apply congr_arg
+ext j
+rw[one_on_diag_ebasis]
+ring
+rfl
+assumption
+assumption
+assumption
