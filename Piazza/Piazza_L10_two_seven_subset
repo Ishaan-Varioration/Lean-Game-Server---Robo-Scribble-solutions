@@ -1,0 +1,15 @@
+Theorem:
+example : {2, 7} ⊆ {2} ∪ { n : ℕ | Odd n} := by
+
+Response:
+rw[subset_iff]
+intro x
+intro hx
+unfold Odd
+obtain ⟨h₁, h₂⟩ := hx
+constructor
+tauto
+right
+use 3
+ring
+tauto
