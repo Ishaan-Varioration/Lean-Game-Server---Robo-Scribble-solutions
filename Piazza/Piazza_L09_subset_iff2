@@ -1,0 +1,11 @@
+Theorem:
+example {A B C : Set ℕ} (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
+
+Response:
+rw[subset_iff] at h₁
+rw[subset_iff] at h₂
+intro a
+intro ab
+apply h₁ at ab
+apply h₂ at ab
+assumption
