@@ -1,0 +1,28 @@
+Theorem:
+theorem preimage_injective {A B : Type} {f : A → B} : Injective (preimage f) ↔ Surjective f := by
+
+Response:
+constructor
+intro h_inj
+intro b
+by_contra h_contra
+push Not at h_contra
+have h : preimage f {b} = ∅
+rw [eq_empty_iff_forall_notMem]
+intro a
+simp
+apply h_contra at a
+push Not
+assumption
+have : preimage f {b} = preimage f ∅
+simp [h]
+apply h_inj at this
+rw[eq_empty_iff_forall_notMem] at this
+apply this at b
+contradiction
+intro hsf b₁ b₂ hfb
+apply congr_arg (image f) at hfb
+rw [Surjective.image_preimage, Surjective.image_preimage] at hfb
+assumption
+assumption
+assumption
