@@ -1,0 +1,15 @@
+Theorem:
+theorem not_imp_not (A B : Prop) : A → B ↔ (¬ B → ¬ A) := by
+
+Response:
+constructor
+intro h
+intro hb
+by_contra ha
+apply h at ha
+contradiction
+intro h
+intro haa
+by_contra hbb
+apply h at hbb
+contradiction
