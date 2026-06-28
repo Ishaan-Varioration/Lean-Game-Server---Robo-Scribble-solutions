@@ -1,0 +1,7 @@
+Theorem:
+example {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A → B, ∀ n, g ≠ f n := by
+
+Reponse:
+unfold Surjective
+push Not
+simp [ne_comm]
