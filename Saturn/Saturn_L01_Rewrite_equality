@@ -1,0 +1,7 @@
+Theorem:
+example (a b c d : ℝ) (h₁ : c = d) (h₂ : a = b) (h₃ : a = d) : b = c := by
+
+Response:
+symm at h₂ 
+rw[h₁, h₂]
+assumption
