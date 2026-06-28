@@ -1,0 +1,8 @@
+Theorem:
+example (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
+
+Response:
+intro
+apply (h.mp) at a
+apply g at a
+assumption
