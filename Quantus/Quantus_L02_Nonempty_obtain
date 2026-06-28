@@ -1,0 +1,6 @@
+Theorem:
+example : Nonempty ℕ := by
+
+Response:
+obtain ⟨a⟩ := h
+use a
