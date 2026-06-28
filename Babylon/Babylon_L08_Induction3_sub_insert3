@@ -1,0 +1,12 @@
+Theorem:
+example (n : ℕ) : (∑ i ∈ Icc 0 n, (2 * i + 1)) = (n + 1)^ 2 := by
+
+Response:
+induction n with d hd
+simp
+rw[← insert_Icc_sub_one_right_eq_Icc, sum_insert]
+simp
+rw[hd]
+ring
+simp
+omega
