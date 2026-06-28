@@ -1,0 +1,5 @@
+Theorem:
+example : 1 ∈ ({1, 6, 4} : Set ℕ) := by
+
+Response:
+tauto
