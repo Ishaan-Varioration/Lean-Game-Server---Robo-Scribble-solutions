@@ -1,0 +1,11 @@
+Theorem:
+example {A B : Type} (f : A → B) (nonempty_fibre : ∀ b : B, ∃ (x : A), f x = b) : HasRightInverse f := by
+
+Response:
+choose g hg using nonempty_fibre
+unfold HasRightInverse
+use g
+unfold Function.RightInverse
+unfold Function.LeftInverse
+intro x
+apply hg
