@@ -1,0 +1,7 @@
+Theorem:
+example (i : ℕ) (h : Odd i): (-1 : ℤ)^i + 1 = 0 := by
+
+Response:
+rw[Odd.neg_pow]
+ring
+assumption
