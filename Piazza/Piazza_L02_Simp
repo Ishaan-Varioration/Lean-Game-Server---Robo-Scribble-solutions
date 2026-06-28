@@ -1,0 +1,7 @@
+Theorem:
+example : 9 ∈ {n : ℕ | Odd n} := by
+
+Reponse:
+simp [Odd]
+use 4
+ring
