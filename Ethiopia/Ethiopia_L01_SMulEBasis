@@ -1,0 +1,6 @@
+Theorem:
+theorem Matrix.smul_ebasis {n : ℕ} (A : Mat[n,n][ℝ]) (i j) : A i j • E i j = single i j (A i j) := by
+
+Response:
+unfold E
+simp
