@@ -1,0 +1,28 @@
+Theorem:
+theorem Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := by
+
+Response:
+rw[matrix_eq_sum_ebasis 1]
+apply sum_congr
+rfl
+intro x hx
+funext r s
+have h : {x} ⊆ univ
+rw[subset_iff]
+intro
+intro hxx
+simp
+rw [← sum_subset h]
+simp
+intro x_1 h1 h2
+have h3 : x_1 ≠ x
+by_contra h4
+rw [h4] at h2
+tauto
+simp at h2
+rw[one_apply]
+rw[if_neg]
+simp
+by_contra h4
+symm at h4
+contradiction
