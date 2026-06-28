@@ -1,0 +1,12 @@
+Theorem:
+example : let f : ℚ → ℚ := fun x ↦ 5 * x let g : ℚ → ℚ := fun x ↦ if 0 ≤ x then 2*x else 0 f ∘ g = g ∘ f := by
+
+Response:
+funext x
+simp [comp_apply]
+by_cases h : 0 ≤ x
+simp [f, g]
+simp [if_pos h]
+ring
+simp [f, g]
+simp [if_neg h]
