@@ -1,0 +1,11 @@
+Theorem:
+example (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
+
+Response:
+rw [prime_def] at hp
+obtain ⟨h₁, h₂⟩ := hp
+specialize h₂ a
+apply h₂ at ha
+obtain ha | ha := ha
+omega
+assumption
