@@ -1,0 +1,7 @@
+Theorem:
+example : ¬ ∃ (P : Prop), IsFixedPt (¬ .) P := by
+
+Response:
+unfold IsFixedPt
+by_contra
+simp at this
