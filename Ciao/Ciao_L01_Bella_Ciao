@@ -1,0 +1,9 @@
+Theorem:
+example : ∀ (n : ℕ), ∃ (m : ℕ), m > n := by
+
+Reponse:
+intro n
+use n + 1
+linarith
+
+/-O bella ciao, bella ciao, bella ciao ciao ciao...-/
