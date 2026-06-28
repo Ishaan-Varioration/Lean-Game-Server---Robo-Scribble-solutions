@@ -1,0 +1,13 @@
+Theorem:
+example (m : ℕ) : (∑ i ∈ Icc 0 m, (i : ℚ) ^3) = (∑ i ∈ Icc 0 m, i : ℚ)^2 := by
+
+Response:
+induction m with d hd
+simp
+rw[← insert_Icc_right_eq_Icc_add_one, sum_insert, sum_insert, hd]
+rw[arithmetic_sum]
+simp
+ring
+simp
+simp
+omega
