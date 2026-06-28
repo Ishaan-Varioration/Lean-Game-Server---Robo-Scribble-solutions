@@ -1,0 +1,5 @@
+Theorem:
+L04_Generalize__univ__eq_univ_iff_forall
+
+Response:
+rw [eq_empty_iff_forall_notMem]
