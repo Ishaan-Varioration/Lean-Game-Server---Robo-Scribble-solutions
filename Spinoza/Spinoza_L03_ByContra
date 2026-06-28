@@ -1,0 +1,7 @@
+Theorem:
+example (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
+
+Response:
+by_contra h
+apply g at h
+contradiction
