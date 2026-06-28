@@ -1,0 +1,10 @@
+Theorem:
+theorem Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
+
+Response:
+unfold Even at h
+unfold Even
+choose r hr using h
+use 2 * r ^ 2 
+rw[hr]
+ring
