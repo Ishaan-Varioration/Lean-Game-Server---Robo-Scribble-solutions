@@ -1,0 +1,12 @@
+Theorem:
+theorem arithmetic_sum (n : ℕ) : (∑ i ∈ Icc 0 n , i : ℚ) = 1/2 * n * (n + 1) := by
+
+Response:
+induction n with d hd
+simp
+rw [← insert_Icc_right_eq_Icc_add_one]
+rw[sum_insert, hd]
+simp
+ring
+simp
+omega
