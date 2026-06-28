@@ -1,0 +1,13 @@
+Theorem:
+example : ∀ (x : ℝ), IsFixedPt (fun (x : ℝ) ↦ |x|) x ↔ 0 ≤ x := by
+
+Response:
+unfold IsFixedPt
+intro x
+constructor
+intro hfp
+rw[← hfp]
+simp
+intro hlex
+simp
+assumption
