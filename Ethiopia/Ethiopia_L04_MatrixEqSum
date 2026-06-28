@@ -1,0 +1,6 @@
+Theorem:
+theorem Matrix.matrix_eq_sum_ebasis {n : ℕ} (A : Mat[n,n][ℝ]) : A = ∑ i : Fin n, ∑ j : Fin n, (A i j) • E i j := by
+
+Response:
+simp [smul_ebasis]
+apply matrix_eq_sum_single
