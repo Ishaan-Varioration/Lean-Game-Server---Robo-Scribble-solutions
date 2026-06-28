@@ -1,0 +1,5 @@
+Theorem:
+example : ¬False := by
+
+Response:
+decide
