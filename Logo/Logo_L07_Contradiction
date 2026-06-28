@@ -1,0 +1,5 @@
+Theorem:
+example (A : Prop) (h : False) : A := by
+
+Response:
+contradiction
