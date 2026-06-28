@@ -1,0 +1,6 @@
+Theorem:
+example (A B : Prop) (h : A) (hAB : A → B) : B := by
+
+Response:
+apply hAB at h
+assumption
