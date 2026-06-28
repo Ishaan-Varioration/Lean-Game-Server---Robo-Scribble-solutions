@@ -1,0 +1,20 @@
+Theorem:
+theorem Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : Injective f) {b : B} (hb : b ∈ range f) : ∃! a, f a = b := by
+
+Response:
+have hrf : Nonempty A
+rw [mem_range] at hb
+obtain ⟨a, hA⟩ := hb
+use a
+rw [injective_iff_hasLeftInverse] at hf
+obtain ⟨g, hg⟩ := hf
+rw [mem_range] at hb
+obtain ⟨a, ha⟩ := hb
+use a
+simp
+constructor
+assumption
+intro y hy
+apply hg at a
+apply hg at y
+rw[← a, ← y, ha, hy]
