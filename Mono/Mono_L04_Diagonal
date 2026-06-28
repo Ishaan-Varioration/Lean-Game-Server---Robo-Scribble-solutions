@@ -1,0 +1,8 @@
+Theorem:
+example {A : Type} (n : ℕ) : let diag : A → Fin (n + 1) → A := fun a i ↦ a Injective (diag) := by
+
+Response:
+unfold Injective
+simp [diag]
+intro a b h
+apply congr_fun h
