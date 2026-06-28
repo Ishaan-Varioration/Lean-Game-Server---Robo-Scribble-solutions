@@ -1,0 +1,37 @@
+Theorem:
+theorem bijective_iff_has_inverse {A B : Type} (f : A → B) : Bijective f ↔ ∃ g, LeftInverse g f ∧ RightInverse g f := by
+
+Response:
+constructor
+intro hbf
+obtain ⟨hif, hsf⟩ := hbf
+unfold Surjective at hsf
+choose g hg using hsf
+use g
+have hR : RightInverse g f
+intro x
+apply hg at x
+assumption
+constructor
+intro x
+let b := f x
+apply hg at b
+apply congr_arg g at b
+simp [b] at b
+tauto
+assumption
+intro hlri
+constructor
+obtain ⟨g, hg⟩ := hlri
+obtain ⟨h₁, h₂⟩ := hg
+intro a₁ a₂ haf
+apply congr_arg g at haf
+apply h₁ at a₁
+apply h₁ at a₂
+simp [a₁, a₂] at haf
+assumption
+obtain ⟨g, hg⟩ := hlri
+obtain ⟨h₁, h₂⟩ := hg
+intro b
+use g b
+rw[h₂]
