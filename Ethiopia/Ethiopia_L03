@@ -1,0 +1,6 @@
+Theorem:
+theorem Matrix.E.mul_same {n : ℕ} (i j k : Fin n) : E i j * E j k = E i k := by
+
+Response:
+unfold E
+simp
