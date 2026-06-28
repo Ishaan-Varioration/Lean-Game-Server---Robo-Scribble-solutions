@@ -1,0 +1,10 @@
+Theorem:
+example : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
+
+Response:
+push Not
+intro
+use n
+rw[not_odd_iff_even]
+unfold Even
+use n
