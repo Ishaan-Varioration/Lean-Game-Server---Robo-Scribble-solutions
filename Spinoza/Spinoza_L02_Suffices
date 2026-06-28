@@ -1,0 +1,8 @@
+Theorem:
+example (A B : Prop) (h : A → ¬ B) (k₁ : A) (k₂ : B) : False := by
+
+Response:
+suffices g : ¬ B
+contradiction
+apply h at k₁
+assumption
