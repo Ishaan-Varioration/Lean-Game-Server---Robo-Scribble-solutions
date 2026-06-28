@@ -1,0 +1,19 @@
+Theorem:
+example {a b : ℕ} (ha : 0 < a) (h : a ∣ b) : ∃! (m : ℕ), a * m = b := by
+
+Response:
+rw [dvd_iff_exists_eq_mul_left] at h
+obtain ⟨c⟩ := h
+rw[mul_comm] at h
+use c
+simp
+constructor
+symm
+assumption
+intro y
+intro h₁
+rw[h] at h₁
+rw[mul_eq_mul_left_iff] at h₁
+obtain h₁ | h₁ := h₁
+assumption
+omega
