@@ -1,0 +1,13 @@
+Theorem:
+example (n x : ℕ) (h : 3 ≤ n): x ∈ Icc 0 n \ Icc 3 n → x = 0 ∨ x = 1 ∨ x = 2 := by
+
+Response:
+simp
+intro h₁
+contrapose
+push Not
+intro h₂
+obtain ⟨ h₃, h₄, h₅⟩ := h₂
+constructor
+omega
+assumption
