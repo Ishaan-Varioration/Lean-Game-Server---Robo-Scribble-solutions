@@ -1,0 +1,21 @@
+Theorem:
+example {A : Type} (f : A → Set A) : ¬ ∃ (a : A), f a = { x | x ∉ f x } := by
+
+Response:
+by_contra h
+obtain ⟨a, ha⟩ := h
+by_cases a ∈ f a
+rw [ha] at h
+simp at h
+suffices : ¬ (a ∈ f a)
+rw [ha] at h
+tauto
+assumption
+rw [ha] at h
+suffices : ¬ (a ∈ f a)
+simp at h
+contradiction
+simp at h
+rw [ha] at h
+simp at h
+assumption
