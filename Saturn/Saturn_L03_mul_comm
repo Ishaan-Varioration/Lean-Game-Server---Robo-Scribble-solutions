@@ -1,0 +1,5 @@
+Theorem:
+example (P : MvPolynomial (Fin 2) ℚ) : (X 0) * P = P * (X 0) := by
+
+Response:
+ring
