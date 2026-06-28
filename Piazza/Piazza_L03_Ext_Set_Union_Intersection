@@ -1,0 +1,8 @@
+Theorem:
+example (A B C : Set ℕ) : A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C) := by
+
+Response:
+ext x
+simp
+simp
+tauto
