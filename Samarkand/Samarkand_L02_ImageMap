@@ -1,0 +1,7 @@
+Theorem:
+example {A B C : Type} (f : A → B) (g : B → C) : image (g ∘ f) = (image g) ∘ (image f) := by
+
+Response:
+funext x
+ext a
+simp
