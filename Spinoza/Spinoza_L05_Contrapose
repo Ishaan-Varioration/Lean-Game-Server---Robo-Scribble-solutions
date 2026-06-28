@@ -1,0 +1,10 @@
+Theorem:
+example (n : ℕ) (h : Odd (n ^ 2)): Odd n := by
+
+Response:
+revert h
+contrapose
+rw[not_odd_iff_even, not_odd_iff_even]
+intro h
+apply even_square at h
+assumption
