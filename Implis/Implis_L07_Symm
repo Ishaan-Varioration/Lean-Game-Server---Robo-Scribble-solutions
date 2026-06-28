@@ -1,0 +1,6 @@
+Theorem:
+example (A B : Prop) (h : A ↔ B) : B ↔ A := by
+
+Response:
+symm
+assumption
