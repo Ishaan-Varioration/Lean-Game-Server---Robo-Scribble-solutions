@@ -1,0 +1,8 @@
+Theorem:
+example {n : ℕ} {t : ℝ} (A : Matrix (Fin n) (Fin n) ℝ) : trace (A - t • 1) = trace A - t • n := by
+
+Response:
+rw[trace_sub]
+rw[trace_smul]
+rw[trace_one]
+rw[card_fin]
