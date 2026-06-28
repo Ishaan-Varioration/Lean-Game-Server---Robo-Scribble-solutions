@@ -1,0 +1,17 @@
+Theorem:
+theorem Set.Subset.antisymm_iff {α : Type} {A B : Set α} : A = B ↔ A ⊆ B ∧ B ⊆ A := by
+
+Response:
+constructor
+intro h
+constructor
+rw[h]
+rw[h]
+intro h
+ext x
+obtain ⟨h₁, h₂⟩ := h
+constructor
+revert h₁
+tauto
+revert h₂
+tauto
