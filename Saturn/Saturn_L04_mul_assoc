@@ -1,0 +1,5 @@
+Theorem:
+example (a b c : MvPolynomial (Fin 4) ℕ ) : a * b * c = a * (b * c) := by
+
+Response:
+rw [mul_assoc]
