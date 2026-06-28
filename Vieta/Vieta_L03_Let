@@ -1,0 +1,7 @@
+Theorem:
+example : ∃ f : ℤ → ℤ, ∀ x, f x < x := by
+
+Response:
+let f : ℤ → ℤ := fun x ↦ x - 1
+use f
+simp [f]
