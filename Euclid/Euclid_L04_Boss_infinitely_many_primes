@@ -1,0 +1,55 @@
+Theorem:
+example : ¬ Set.Finite { p : ℕ | Prime p} := by
+
+Response:
+/-Extremely difficult without the help of a solution. If you managed to make it for this one, hats off to you. Had to
+use the dev's solution to do a huge part of this.-/
+by_contra h
+/-New direction-/
+let all_primes := h.toFinset
+let prod := ∏ p ∈ all_primes, p
+let new_prime := prod + 1
+let np := new_prime
+/-Prove prod + 1 is not equal to one-/
+have hp : prod > 0
+apply Finset.prod_pos
+simp[all_primes]
+intro i
+intro hi
+have h₁ : ∀ p, Prime p →  0 < p
+intro p
+intro hp
+rw[prime_def] at hp
+obtain ⟨h₁, h₂⟩ := hp
+omega
+/-Derive that there is a prime that divides prod + 1-/
+apply h₁ at hi
+assumption
+have therebeaprime: prod + 1 ≠ 1
+omega
+apply exists_prime_and_dvd at therebeaprime
+/-Derive that there is not a prime that divides prod + 1-/
+have therenotbeaprime :¬ ∃ p, Prime p ∧ p ∣ prod + 1
+push Not
+intro p
+intro hpp
+let q := ∏ p' ∈ (all_primes.erase p), (p' : ℕ)
+have ha : prod = p * q
+simp [prod]
+have : p ∈ all_primes
+simp [all_primes]
+assumption
+apply insert_erase at this
+rw[← this]
+apply prod_insert
+simp
+simp [new_prime]
+rw[ha]
+apply not_dvd_of_lt_of_lt_mul_succ (n := p) (k:=q) (m := p*q+1)
+rw[← ha]
+omega
+simp [mul_add, ← ha]
+rw[prime_def] at hpp
+obtain ⟨h3, h4⟩ := hpp
+omega
+contradiction
