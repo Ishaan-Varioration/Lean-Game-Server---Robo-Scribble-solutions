@@ -1,0 +1,8 @@
+Theorem:
+example (A B : Prop) (h : (A ∧ B) ∨ A) : A := by
+
+Response:
+obtain h | h := h
+obtain ⟨h₁, h₂⟩ := h
+assumption
+assumption
