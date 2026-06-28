@@ -1,0 +1,9 @@
+Theorem:
+example (n : ℕ) (h : Odd (n ^ 2)) : Odd n := by
+
+Responses:
+by_contra g
+rw[not_odd_iff_even] at g
+apply even_square at g
+rw[← not_odd_iff_even] at g
+contradiction
