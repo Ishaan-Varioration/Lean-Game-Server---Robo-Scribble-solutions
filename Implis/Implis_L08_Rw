@@ -1,0 +1,8 @@
+Theorem:
+example (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : B ↔ C := by
+
+Response:
+symm at h₃
+rw[h₃, h₂] at h₁
+symm at h₁
+assumption
