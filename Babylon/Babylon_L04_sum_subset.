@@ -1,0 +1,29 @@
+Theorem:
+example (n : ℕ) (hn : 3 ≤ n) : ∑ i ∈ Icc 0 n, (i^3 - 3 * i^2 + 2*i : ℤ ) = ∑ i ∈ Icc 3 n, (i^3 - 3*i^2 + 2*i : ℤ) := by
+
+Response:
+symm
+apply sum_subset
+rw[Icc_subset_Icc_iff]
+constructor
+decide
+tauto
+assumption
+intro h₁
+intro h₂
+intro h₃
+have h₄ : h₁ = 0 ∨ h₁ = 1 ∨ h₁ = 2
+simp at h₂
+simp at h₃
+contrapose h₃
+push Not
+constructor
+omega
+assumption
+obtain h₄ | h₄ | h₄ := h₄
+rw[h₄]
+ring
+rw[h₄]
+ring
+rw[h₄]
+ring
