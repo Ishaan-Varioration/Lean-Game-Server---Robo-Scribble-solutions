@@ -1,0 +1,6 @@
+Theorem:
+example (A B : Prop) (hA : A) : A ∨ (¬ B) := by
+
+Reponse:
+left
+assumptio
