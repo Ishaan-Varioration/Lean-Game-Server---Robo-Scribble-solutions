@@ -1,0 +1,22 @@
+Theorem:
+example {A B : Type} {f : A -> B} {g : B -> A} : RightInverse g f ↔ f ∘ g = id := by
+
+Response:
+constructor
+unfold Function.RightInverse
+intro hr
+funext x
+rw[comp_apply]
+rw[hr x]
+unfold id
+rfl
+intro ha
+unfold Function.RightInverse
+unfold Function.LeftInverse
+intro x
+apply congr_fun at ha
+specialize ha x
+rw[comp_apply] at ha
+rw[ha]
+unfold id
+rfl
