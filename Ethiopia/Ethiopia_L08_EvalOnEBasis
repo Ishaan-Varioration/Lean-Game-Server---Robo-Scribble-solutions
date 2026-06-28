@@ -1,0 +1,27 @@
+Theorem:
+theorem Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ}
+(h₁ : ∀ A B, f (A * B) = f (B * A)) (A : Mat[n,n][ℝ]) : f A = ∑ i : Fin n, (A i i) * f (E i i) := by
+
+Response:
+nth_rw 1 [matrix_eq_sum_single A]
+simp [map_sum]
+trans ∑ i, ∑ j, if i = j then (A i j) * f (E i j) else 0
+apply congr_arg
+ext i
+apply congr_arg
+ext j
+by_cases h₂: i = j
+rw[if_pos]
+rw[← smul_ebasis]
+simp
+assumption
+rw[← smul_ebasis]
+simp
+push Not at h₂
+rw[if_neg h₂]
+simp
+rw[zero_on_offDiag_ebasis]
+simp
+assumption
+assumption
+simp
