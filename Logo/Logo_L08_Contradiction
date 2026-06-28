@@ -1,0 +1,5 @@
+Theorem:
+example (n : ℕ) (h : n ≠ n) : n = 37 := by
+
+Response:
+Contradiction
