@@ -1,0 +1,19 @@
+Theorem:
+example {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
+
+Response:
+constructor
+intro hsf
+rw [eq_univ_iff_forall]
+intro b
+rw[mem_range]
+rw[surjective_iff_hasRightInverse] at hsf
+obtain ⟨g , hg⟩ := hsf
+use g b
+apply hg
+rw [eq_univ_iff_forall]
+intro hrf
+intro b
+apply hrf at b
+rw [mem_range] at b
+assumption
