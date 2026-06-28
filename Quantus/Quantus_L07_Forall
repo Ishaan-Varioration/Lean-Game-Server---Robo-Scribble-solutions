@@ -1,0 +1,12 @@
+Theorem:
+example : ∀ (x : ℕ), (Even x) → Odd (1 + x) := by
+
+Response:
+intro x
+intro h
+unfold Even at h
+unfold Odd
+choose r hr using h
+use r
+rw[add_comm, hr]
+ring
