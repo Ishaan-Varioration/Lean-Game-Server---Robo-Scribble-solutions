@@ -1,0 +1,26 @@
+Theorem:
+example {A : Type} (f : A → A) (h : f ∘ f = f) : range f = fixedPoints f := by
+
+Response:
+apply congr_fun at h
+unfold range fixedPoints IsFixedPt
+rw [Subset.antisymm_iff]
+constructor
+rw[subset_iff]
+intro x hx
+simp
+simp at hx
+obtain ⟨y, hy⟩ := hx
+rw[← hy]
+apply h at y
+simp at y
+assumption
+rw[subset_iff]
+intro x hx
+simp at hx
+simp
+specialize h x
+rw [comp_apply] at h
+use f x
+rw[hx]
+assumption
