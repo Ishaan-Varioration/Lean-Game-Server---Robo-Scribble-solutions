@@ -1,0 +1,30 @@
+Theorem:
+example (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ (p : ℕ), Prime p → p ∣ a := by
+
+Response:
+let all_primes := hf.toFinset
+use ∏ p ∈ all_primes, p
+constructor
+apply Finset.prod_pos
+simp[all_primes]
+intro i
+intro hi
+have h₁ : ∀ p, Prime p →  0 < p
+intro p
+intro hp
+rw[prime_def] at hp
+obtain ⟨h₁, h₂⟩ := hp
+omega
+apply h₁ at hi
+assumption
+intro p
+intro h
+have hpp : p ∈ all_primes
+simp [all_primes]
+assumption
+rw[dvd_iff_exists_eq_mul_left]
+rw[← insert_erase hpp]
+rw[prod_insert]
+use  ∏ x ∈ all_primes.erase p, x
+rw[mul_comm]
+simp
