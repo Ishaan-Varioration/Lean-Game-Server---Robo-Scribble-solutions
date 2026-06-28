@@ -1,0 +1,15 @@
+Theorem:
+example {People : Type} [h_nonempty : Nonempty People] (isDrinking : People → Prop) : ∃ (x : People), isDrinking x → ∀ (y : People), isDrinking y := by
+
+Response:
+by_cases h : ∀ y : People, isDrinking y
+obtain ⟨x⟩ := h_nonempty
+use x
+intro hx
+assumption
+obtain ⟨x⟩ := h_nonempty
+rw[not_forall] at h
+obtain ⟨y, hx⟩ := h
+use y
+intro hy
+contradiction
