@@ -1,0 +1,6 @@
+Theorem:
+example {A Y : Type} {f : A → A → Y} {s : Y → Y} {a : A} (ha : f a = fun a' ↦ s (f a' a')) : IsFixedPt s (f a a) := by
+
+Response:
+unfold IsFixedPt
+nth_rw 2 [ha]
