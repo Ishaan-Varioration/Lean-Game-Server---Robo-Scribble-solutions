@@ -1,0 +1,9 @@
+Theorem:
+example : let f : ℕ → ℕ := fun n ↦ if Even n then n^2 else n+1; ¬ Injective (f + f) := by
+
+Response:
+unfold Injective
+push Not
+use 2
+use 3
+decide
