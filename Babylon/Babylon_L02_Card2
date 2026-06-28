@@ -1,0 +1,6 @@
+Theorem:
+example (I : Finset ℕ) : ∑ i ∈ I, 2 = 2 * card I := by
+
+Response:
+simp
+rw[mul_comm]
