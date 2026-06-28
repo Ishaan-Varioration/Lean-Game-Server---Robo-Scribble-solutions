@@ -1,0 +1,7 @@
+Theorem:
+example (A B C : Prop) (h : A ∧ (B ∧ C)) : B := by
+
+Response:
+obtain ⟨ h₁, h₂⟩ := h
+obtain ⟨ h₃, h₄⟩ := h₂
+assumption
