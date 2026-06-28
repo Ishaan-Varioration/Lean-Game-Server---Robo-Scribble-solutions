@@ -1,0 +1,12 @@
+Theorem:
+example : let f := fun (n : ℤ) ↦ n^3 + (n + 3) Injective f := by
+
+Response:
+apply StrictMono.injective
+apply StrictMono.add
+apply Odd.strictMono_pow
+decide
+unfold StrictMono
+intro a b hab
+simp [f]
+assumption
