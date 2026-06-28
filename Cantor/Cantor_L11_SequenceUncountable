@@ -1,0 +1,12 @@
+Theorem:
+example : ¬ ∃ f : ℕ → ℕ → ℕ, Surjective f := by
+
+Response:
+push Not
+intro hf
+by_contra hp
+apply cantor_diagonal at hp
+specialize hp succ
+obtain ⟨s, hs⟩ := hp
+unfold fixedPoints IsFixedPt at hs
+simp at hs
