@@ -1,0 +1,5 @@
+Theorem:
+theorem prime_two : Prime 2 := by
+
+Response:
+decide
