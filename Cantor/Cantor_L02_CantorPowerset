@@ -1,0 +1,33 @@
+Theorem:
+example {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
+
+Response:
+push Not
+intro f
+by_contra hsf
+let s := { a | a ∉ f a }
+unfold Surjective at hsf
+specialize hsf s
+obtain ⟨a, ha⟩ := hsf
+have h₄ : ¬ ∃ (a : A), f a = { x | x ∉ f x }
+by_contra h
+obtain ⟨a, ha⟩ := h
+by_cases a ∈ f a
+rw [ha] at h
+simp at h
+suffices : ¬ (a ∈ f a)
+rw [ha] at h
+tauto
+assumption
+rw [ha] at h
+suffices : ¬ (a ∈ f a)
+simp at h
+contradiction
+simp at h
+rw [ha] at h
+simp at h
+assumption
+push Not at h₄
+apply h₄ at a
+rw [ha] at a
+contradiction
