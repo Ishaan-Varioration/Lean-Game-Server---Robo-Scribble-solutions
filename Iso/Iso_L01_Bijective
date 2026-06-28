@@ -1,0 +1,12 @@
+Theorem:
+example : let f := fun (n : ℤ) ↦ n + 1 Bijective f := by
+
+Response:
+constructor
+intro a₁ a₂
+intro haf
+simp [f] at haf
+assumption
+intro b
+use b - 1
+simp [f]
