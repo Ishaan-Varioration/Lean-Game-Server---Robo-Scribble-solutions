@@ -1,0 +1,5 @@
+Theorem:
+example : Even 42 := by
+
+Response:
+decide
