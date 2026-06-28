@@ -1,0 +1,6 @@
+Theorem:
+example (a b : ℕ) : 5 ∣ (a * b) ↔ 5 ∣ a ∨ 5 ∣ b := by
+
+Response:
+apply Prime.dvd_mul
+decide
