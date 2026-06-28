@@ -1,0 +1,6 @@
+Theorem:
+example {x : ℤ} (f : ℤ → ℤ) : let g : ℤ → ℤ := fun x ↦ x + 3; f (g 0) = f 3 := by
+
+Response:
+apply congr_arg
+rfl
