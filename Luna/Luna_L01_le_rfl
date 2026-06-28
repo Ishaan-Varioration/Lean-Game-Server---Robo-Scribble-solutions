@@ -1,0 +1,5 @@
+Theorem:
+example (n : ℕ) : n ≤ n := by
+
+Response:
+rfl
