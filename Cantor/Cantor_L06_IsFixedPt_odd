@@ -1,0 +1,13 @@
+Theorem:
+example {f : ℝ → ℝ} (h_odd : ∀ x, f (-x) = - f x) (x : ℝ) : IsFixedPt f x ↔ IsFixedPt f (- x) := by
+
+Response:
+unfold IsFixedPt
+constructor
+rw [h_odd x]
+intro hx
+rw [hx]
+intro hfx
+rw [h_odd x] at hfx
+simp at hfx
+assumption
