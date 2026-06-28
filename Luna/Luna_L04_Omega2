@@ -1,0 +1,14 @@
+Theorem:
+example (l m n x : ℕ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by
+
+Response:
+intro h
+obtain ⟨f, j⟩ := h
+by_contra k
+have k : ¬(¬(m ≤ x ∧ x ≤ n) → x ≤ m)
+push Not
+constructor
+intro h
+omega
+omega
+omega
