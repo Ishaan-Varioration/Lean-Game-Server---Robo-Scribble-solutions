@@ -1,0 +1,16 @@
+Theorem:
+theorem lt_trichotomy : ∀ a b : ℝ, a < b ∨ a = b ∨ b < a := by
+
+Response:
+intro a
+intro b
+by_cases h_leq : a ≤ b
+by_cases h_lt : a < b
+left
+assumption
+right
+left
+linarith
+right
+right
+linarith
