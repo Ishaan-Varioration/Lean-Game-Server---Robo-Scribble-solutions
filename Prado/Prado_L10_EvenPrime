@@ -1,0 +1,20 @@
+Theorem:
+example : ∃! (p : ℕ), Nat.Prime p ∧ Even p := by
+
+Response:
+use 2
+simp
+constructor
+decide
+intro y
+intro h₂
+rw[prime_def] at h₂
+obtain ⟨h₃, h₄⟩ := h₂
+specialize h₄ 2
+intro h₁
+rw[even_iff_two_dvd] at h₁
+apply h₄ at h₁
+obtain h₁ | h₁ := h₁
+omega
+symm
+assumption
