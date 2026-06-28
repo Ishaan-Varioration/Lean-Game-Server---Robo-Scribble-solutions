@@ -1,0 +1,6 @@
+Theorem:
+example {A B : Type} (f : A → B) (y : B) : f ⁻¹' {y} ≠ ∅ ↔ (∃ a, f a = y) := by
+
+Response:
+unfold Ne
+simp [eq_empty_iff_forall_notMem]
