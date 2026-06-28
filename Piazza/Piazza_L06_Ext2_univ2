@@ -1,0 +1,7 @@
+Theorem:
+example (A B : Set ℕ) : univ \ (A ∩ B) = (univ \ A) ∪ (univ \ B) ∪ (A \ B) := by
+
+Response:
+ext x
+simp
+tauto
