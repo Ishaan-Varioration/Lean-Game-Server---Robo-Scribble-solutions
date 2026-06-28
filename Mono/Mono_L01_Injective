@@ -1,0 +1,7 @@
+Theorem:
+example : let f := fun (n : ℤ) ↦ n + 3 Injective f := by
+
+Response:
+intro a b hab
+simp [f] at hab
+assumption
