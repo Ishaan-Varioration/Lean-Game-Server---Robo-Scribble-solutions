@@ -1,0 +1,9 @@
+Theorem:
+example (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
+
+Response:
+obtain ⟨k₁, k₂⟩ := k
+have g : ¬ B
+apply h at k₁
+assumption
+contradiction
