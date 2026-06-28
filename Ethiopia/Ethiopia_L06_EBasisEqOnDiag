@@ -1,0 +1,8 @@
+Theorem:
+theorem Matrix.eq_on_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ} (h₁ : ∀ A B, f (A * B) = f (B * A)) : ∀ (i j : Fin n), f (E i i) = f (E j j) := by
+
+Response:
+intro i j
+simp [← E.mul_same i j i]
+simp [← E.mul_same j i j]
+apply h₁
