@@ -1,0 +1,18 @@
+Theorem:
+theorem even_iff_two_dvd {a : ℕ} : Even a ↔ 2 ∣ a := by
+
+Response:
+rw [dvd_iff_exists_eq_mul_left]
+constructor
+unfold Even
+intro h₂
+obtain ⟨x, hx⟩ := h₂
+use x
+rw[hx]
+ring
+intro h₃
+obtain ⟨x, hx⟩ := h₃
+unfold Even
+use x
+rw[hx]
+ring
