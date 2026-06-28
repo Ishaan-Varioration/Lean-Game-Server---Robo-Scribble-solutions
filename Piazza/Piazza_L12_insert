@@ -1,0 +1,12 @@
+Theorem:
+example (A : Finset ℕ) (a : ℕ) : insert a A = A ∪ {a} := by
+
+Response:
+ext x
+constructor
+intro ha
+simp at ha
+simp [ha]
+intro hx
+simp at hx
+simp [hx]
