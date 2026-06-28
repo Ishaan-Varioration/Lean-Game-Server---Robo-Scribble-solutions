@@ -1,0 +1,11 @@
+Theorem:
+theorem StrictMono.injective {f : ℤ → ℤ} (hf : StrictMono f) : Injective f := by
+
+Response:
+intro a  b fab
+obtain h | h | h := lt_trichotomy a b
+apply hf at h
+omega
+assumption
+apply hf at h
+omega
