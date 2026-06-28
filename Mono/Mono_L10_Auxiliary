@@ -1,0 +1,14 @@
+Theorem:
+example {A B : Type} [hA : Nonempty A] (f : A → B ) : ∀ b : B, ∃ a : A, f a = b ∨ ¬ ∃ a' : A , f a' = b := by
+
+Response:
+intro b
+by_cases ∃ (a : A), f a = b
+obtain ⟨a, ha⟩ := h
+use a
+left
+assumption
+obtain ⟨a₀⟩ := hA
+use a₀
+right
+assumption
