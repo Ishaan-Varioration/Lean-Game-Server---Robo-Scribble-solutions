@@ -1,0 +1,14 @@
+Theorem:
+example {A : Type} {f : A → ℕ} (h : ∃ a : A, f a = 0) {g : A → A} (hs : f ∘ g = succ ∘ f) : ∀ n, ∃ a, f a = n := by
+
+Response:
+apply congr_fun at hs
+simp [comp_apply] at hs
+intro n
+induction n with d hd
+assumption
+obtain ⟨p, hp⟩ := hd
+use g p
+apply hs at p
+rw [hp] at p 
+assumption
