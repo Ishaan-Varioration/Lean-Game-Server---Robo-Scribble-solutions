@@ -1,0 +1,11 @@
+Theorem:
+example (A B C D E F G H I : Prop) (f : A → B) (g : C → B) (h : A → D) (i : B → E) (j : C → F) (k : E → D) (l : E → F) (m : G → D) (n : H → E) (p : F → I) (q : H → G) (r : H → I) : A → I := by
+
+Response:
+-- trace your way around the commutativity diagram
+intro
+apply f at a
+apply i at a
+apply l at a
+apply p at a
+assumption
