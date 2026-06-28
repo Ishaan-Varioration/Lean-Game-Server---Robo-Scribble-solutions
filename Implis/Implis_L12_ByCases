@@ -1,0 +1,9 @@
+Theorem:
+example (A : Prop) : ¬A ∨ A := by
+
+Response:
+by_cases h : A
+right
+assumption
+left 
+assumption
