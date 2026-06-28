@@ -1,0 +1,7 @@
+Theorem:
+example (x : ℤ) : let f : ℤ → ℤ := fun x ↦ x + 5 ∃ (g : ℤ → ℤ), (g ∘ f) x = x + 2 := by
+
+Response:
+use fun (x : ℤ) ↦ x - 3
+rw[comp_apply]
+ring
