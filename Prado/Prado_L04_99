@@ -1,0 +1,10 @@
+Theorem:
+example : ∃ p : ℕ, Prime p ∧ p ∣ 99 := by
+
+Response:
+use 11
+rw[dvd_iff_exists_eq_mul_left]
+constructor
+decide
+use 9
+ring
