@@ -1,0 +1,16 @@
+Theorem:
+theorem insert_erase {A : Type} {s : Finset A} {a : A} (h : a ∈ s) : insert a (Finset.erase s a) = s := by
+
+Response:
+ext x
+constructor
+intro ha
+simp at ha
+obtain ha | ha := ha
+rw[ha]
+assumption
+obtain ⟨h₁, h₂⟩ := ha
+assumption
+intro ha
+simp [ha]
+tauto
